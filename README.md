@@ -1,7 +1,6 @@
 # clickworthy
 
 ## TODO
-* ID -> embed
 * ID -> related ID's
 * titles, descriptions and related vid titles
 * design the pages

@@ -4,10 +4,13 @@
 	<!-- TODO -->
 </head>
 <body>
-	<a href="<%= yid %>" target="<%= yid %>">
-		Your video
-	</a>
+	<iframe type="text/html"
+        src="http://www.youtube.com/embed/<%= yid %>?enablejsapi=1"
+        frameborder="0">
+    </iframe>
 
-    <a href="/">Make your own</a>
+    <div>
+        <a href="/">Make your own</a>
+    </div>
 </body>
 </html>
