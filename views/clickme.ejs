@@ -10,6 +10,17 @@
     </iframe>
 
     <div>
+        Related videos
+        <div style="display:flex; flex-direction:row;">
+            <% for (var i = 0; i < related.length; i ++) { %>
+                <div style="width: <%= related[i].thumb.width %>px; height: <%= related[i].thumb.height %>px; background-image: url('<%= related[i].thumb.url %>'); color: white; margin-right: 8px;">
+                    <p><%= related[i].title %></p>
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+    <div>
         <a href="/">Make your own</a>
     </div>
 </body>

@@ -5,6 +5,7 @@ var app = express();
 var port = process.env.PORT || 5364;
 
 var ytparser = require('./ytparser.js');
+var ytrelated = require('./ytrelated.js');
 
 // body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,8 +31,14 @@ app.post('/makeme/makeme/makeme', function(req, res) {
 app.get('/clickme/clickme/clickme', function(req, res) {
     var yid = req.query.yid;
 
-    res.render('../views/clickme.ejs', {
-        yid: yid
+    ytrelated.related(yid, function(err, related) {
+        //ignore the error if there is one
+        related = related || [];
+
+        res.render('../views/clickme.ejs', {
+            yid: yid,
+            related: related
+        });
     });
 });
 
