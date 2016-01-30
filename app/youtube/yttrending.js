@@ -1,6 +1,6 @@
 var request = require('request');
 var path = require('path');
-var ytConverter = require(path.resolve(__dirname + '/ytconverter.js'));
+var ytConverter = require(path.resolve('app/youtube/ytconverter.js'));
 
 var API_URL = 'https://www.googleapis.com/youtube/v3/videos'
                 + '?part=snippet'
