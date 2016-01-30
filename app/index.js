@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 5364;
 
+var textgen = require('./textgen.js');
 var ytparser = require('./ytparser.js');
 var ytrelated = require('./ytrelated.js');
 
@@ -37,6 +38,9 @@ app.get('/clickme/clickme/clickme', function(req, res) {
 
         res.render('../views/clickme.ejs', {
             yid: yid,
+            pageTitle: textgen.pageTitle(),
+            pageDesc: textgen.pageDesc(),
+            relTitle: textgen.relTitle(),
             related: related
         });
     });
