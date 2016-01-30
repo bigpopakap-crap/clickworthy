@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 5364;
 
-express.static('../public/');
+app.use('/public', express.static('public'));
 
 var textgen = require('./textgen.js');
 var ytparser = require('./youtube/ytparser.js');

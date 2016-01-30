@@ -1,11 +1,8 @@
+extends ./layouts/layout.jade
 include ./mixins/carousel
 include ./mixins/ytThumb
 
-doctype html
-html
-head
-    <!-- TODO -->
-body
+block body
   div
     form(method=GLOBALS.ROUTES.CREATE.METHOD,
          action=GLOBALS.ROUTES.CREATE.URL)

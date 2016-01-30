@@ -1,11 +1,8 @@
+extends ./layouts/layout.jade
 include ./mixins/carousel
 include ./mixins/ytThumb
 
-doctype html
-html
-head
-    <!-- TODO -->
-body
+block body
   h1 #{pageTitle}
   iframe(type="text/html",
          src="https://www.youtube.com/embed/#{yid}?origin=#{siteOrigin}"
