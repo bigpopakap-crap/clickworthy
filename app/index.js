@@ -5,8 +5,9 @@ var app = express();
 var port = process.env.PORT || 5364;
 
 var textgen = require('./textgen.js');
-var ytparser = require('./ytparser.js');
-var ytrelated = require('./ytrelated.js');
+var ytparser = require('./youtube/ytparser.js');
+var ytrelated = require('./youtube/ytrelated.js');
+var ytTrending = require('./youtube/yttrending.js');
 
 var GLOBALS = require('./globals.js');
 app.locals = {
@@ -18,7 +19,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // homepage
 app.get(GLOBALS.ROUTES.INDEX, function(req, res) {
-    res.render(GLOBALS.VIEWS.INDEX);
+    ytTrending.trending(function(err, trending) {
+        //ignore the error if there is one
+        trending = trending || [];
+
+        res.render(GLOBALS.VIEWS.INDEX, {
+            trending: trending
+        });
+    });
 });
 
 //create a page from youtube URL

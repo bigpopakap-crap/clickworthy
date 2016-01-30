@@ -20,7 +20,7 @@ module.exports = {
     },
 
     VIEWS : {
-        INDEX : 'index.ejs',
-        VIDEO_PAGE : 'videoPage.ejs'
+        INDEX : 'index.jade',
+        VIDEO_PAGE : 'videoPage.jade'
     }
 }

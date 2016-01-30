@@ -1,0 +1,18 @@
+doctype html
+html
+head
+    <!-- TODO -->
+body
+    div
+        form(method=GLOBALS.ROUTES.CREATE.METHOD,
+             action=GLOBALS.ROUTES.CREATE.URL)
+            input(type="url",
+                  name=GLOBALS.ROUTES.CREATE.PARAMS.Y_URL
+                  value="https://www.youtube.com/watch?v=wKbU8B-QVZk")
+            input(type="submit", value="Create!")
+
+    div
+        div(style="display:flex; flex-direction:row;")
+            - for (var i = 0; i < trending.length; i++)
+                div(style="width: #{trending[i].thumb.width}px; height: #{trending[i].thumb.height}px; background-image: url('#{trending[i].thumb.url}'); color: white; margin-right: 8px;")
+                    p #{trending[i].title}

@@ -1,4 +1,5 @@
 var request = require('request');
+var ytConverter = require('./ytConverter.js');
 
 function relatedVidApiUrl(yid) {
     return 'https://www.googleapis.com/youtube/v3/search'
@@ -10,13 +11,7 @@ function relatedVidApiUrl(yid) {
 
 /*
  * callback(err, [vids...])
- *
- * vid = {
- *    yid, title, description,
- *    thumb: {
- *      url, width, height
- *    }
- * }
+ *  where each vid has the format in ytconverter.js
  */
 function getRelated(yid, callback) {
     var apiUrl = relatedVidApiUrl(yid);
@@ -28,16 +23,7 @@ function getRelated(yid, callback) {
         }
 
         body = JSON.parse(body);
-
-        var vids = body.items.map(function(item) {
-            return {
-                yid: item.id.videoId,
-                title: item.snippet.title,
-                description: item.snippet.description,
-                thumb: item.snippet.thumbnails.default
-            };
-        });
-
+        var vids = body.items.map(ytConverter.fromRelatedSnippet);
         callback(err, vids);
     });
 }

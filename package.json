@@ -18,8 +18,8 @@
   "homepage": "https://github.com/bigpopakap/clickworthy",
   "dependencies": {
     "body-parser": "^1.14.2",
-    "ejs": "^2.4.1",
     "express": "^4.13.4",
+    "jade": "^1.11.0",
     "request": "^2.69.0"
   }
 }
