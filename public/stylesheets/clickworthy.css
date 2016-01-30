@@ -1,0 +1,10 @@
+.ytThumb {
+    color: white;
+    margin: .5rem;
+    padding: .25rem;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+}
