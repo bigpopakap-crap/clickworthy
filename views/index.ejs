@@ -4,9 +4,10 @@
     <!-- TODO -->
 </head>
 <body>
-    <form method="POST" action="/makeme/makeme/makeme">
+    <form method="<%= GLOBALS.ROUTES.CREATE.METHOD %>"
+          action="<%= GLOBALS.ROUTES.CREATE.URL %>">
         <input type="url"
-                name="youtubeUrl"
+                name="<%= GLOBALS.ROUTES.CREATE.PARAMS.Y_URL %>"
                 value="https://www.youtube.com/watch?v=wKbU8B-QVZk"/>
         <input type="submit"
                 value="Create!"/>

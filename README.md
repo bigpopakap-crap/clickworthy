@@ -1,7 +1,6 @@
 # clickworthy
 
 ## TODO
-* clean up code
 * google analytics
 * design the pages
 * deal with error conditions
