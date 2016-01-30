@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 5364;
 
+var ytparser = require('./ytparser.js');
+
 // body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -16,8 +18,10 @@ app.get('/', function(req, res) {
 app.post('/makeme/makeme/makeme', function(req, res) {
     var youtubeUrl = req.body.youtubeUrl;
 
-    //TODO do stuff
-    var yid = youtubeUrl;
+    var yid = ytparser.parse(youtubeUrl);
+    if (!yid) {
+        //TODO handle this error... not a valid youtube video
+    }
 
     res.redirect('/clickme/clickme/clickme?yid=' + yid);
 });
