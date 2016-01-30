@@ -1,6 +1,7 @@
 # clickworthy
 
 ## TODO
+* top trending videos from youtube API
 * google analytics
 * design the pages
 * deal with error conditions
