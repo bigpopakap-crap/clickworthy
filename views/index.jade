@@ -3,13 +3,34 @@ include ./mixins/carousel
 include ./mixins/ytThumb
 
 block body
-  div
-    form(method=GLOBALS.ROUTES.CREATE.METHOD,
-         action=GLOBALS.ROUTES.CREATE.URL)
-      input(type="url",
-            name=GLOBALS.ROUTES.CREATE.PARAMS.Y_URL
-            value="https://www.youtube.com/watch?v=wKbU8B-QVZk")
-      input(type="submit", value="Create!")
+  div.container-fluid
+    div.row
+      div.col-md12.text-center
+        h1 You have the most important video to share with everyone
+
+        form(method=GLOBALS.ROUTES.CREATE.METHOD,
+             action=GLOBALS.ROUTES.CREATE.URL)
+          div.form-group.col-xs-12.col-md-8.col-md-offset-2.text-center
+            label(for="yurl") Paste a video here
+            input#yurl.form-control(type="url",
+                  name=GLOBALS.ROUTES.CREATE.PARAMS.Y_URL
+                  placeholder="https://www.youtube.com/watch?v=wKbU8B-QVZk")
+
+          div.col-xs-12.col-md-4.col-md-offset-4.text-center
+            label(for="submitButtons") And this video makes you feel...
+            div#submitButtons.form-group.feelyText
+              div.form-group
+                button.form-control.btn.btn-warning(type="submit", value="happy")
+                  | The happiest
+                  span.glyphicon.glyphicon-share-alt
+              div.form-group
+                button.form-control.btn.btn-primary(type="submit", value="sad")
+                  | The saddest
+                  span.glyphicon.glyphicon-share-alt
+              div.form-group
+                button.form-control.btn.btn-danger(type="submit", value="angry")
+                  | The angriest
+                  span.glyphicon.glyphicon-share-alt
 
   +carousel
       - for (var i = 0; i < trending.length; i++)

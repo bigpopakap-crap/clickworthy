@@ -1,3 +1,8 @@
+.feelyText,
+.feelyText * {
+    text-transform: uppercase;
+}
+
 .ytThumb {
     color: white;
     margin: .5rem;
