@@ -1,5 +1,5 @@
 var request = require('request');
-var ytConverter = require('./ytConverter.js');
+var ytConverter = require('./ytconverter.js');
 
 function relatedVidApiUrl(yid) {
     return 'https://www.googleapis.com/youtube/v3/search'
