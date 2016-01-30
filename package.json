@@ -1,0 +1,23 @@
+{
+  "name": "clickworthy",
+  "version": "1.0.0",
+  "description": "Make awesome clickbait",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bigpopakap/clickworthy.git"
+  },
+  "author": "bigpopakap",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bigpopakap/clickworthy/issues"
+  },
+  "homepage": "https://github.com/bigpopakap/clickworthy",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4"
+  }
+}
