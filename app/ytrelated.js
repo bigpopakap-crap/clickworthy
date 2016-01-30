@@ -1,14 +1,11 @@
 var request = require('request');
 
-//TODO HIDE THIS KEY (AND REGENERATE)
-var API_KEY = 'AIzaSyAiPnD9K0SMc19Yivk9fto9vHX0X5QjzS0';
-
 function relatedVidApiUrl(yid) {
     return 'https://www.googleapis.com/youtube/v3/search'
             + '?part=snippet'
             + '&relatedToVideoId=' + yid
             + '&type=video'
-            + '&key=' + API_KEY;
+            + '&key=' + process.env.YOUTUBE_API_KEY;
 }
 
 /*

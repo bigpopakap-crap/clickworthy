@@ -1,7 +1,7 @@
 # clickworthy
 
 ## TODO
-* hide API keys and clean up code
+* clean up code
 * google analytics
 * design the pages
 * deal with error conditions
