@@ -9,12 +9,28 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // homepage
 app.get('/', function(req, res) {
-	res.status(200).send('Hello world!');
+    res.render('../views/index.ejs');
+});
+
+//create flow
+app.post('/makeme/makeme/makeme', function(req, res) {
+    var youtubeUrl = req.body.youtubeUrl;
+
+    //TODO do stuff
+    var yid = youtubeUrl;
+
+    res.redirect('/clickme/clickme/clickme?yid=' + yid);
+});
+
+app.get('/clickme/clickme/clickme', function(req, res) {
+    res.render('../views/clickme.ejs', {
+        yid: req.query.yid
+    });
 });
 
 // anything else redirects home
 app.get('*', function(req, res) {
-	res.redirect('/');
+    res.redirect('/');
 });
 
 // error handler
