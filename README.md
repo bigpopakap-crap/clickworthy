@@ -6,4 +6,7 @@
 * ID -> related ID's
 * titles, descriptions and related vid titles
 * design the pages
-* tinyurl or bit.ly
+* google analytics
+* share to twitter/facebook/email/link
+* mobile view
+* tinyurl or bit.ly links
