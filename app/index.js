@@ -12,7 +12,7 @@ app.get('/', function(req, res) {
     res.render('../views/index.ejs');
 });
 
-//create flow
+//create a page from youtube URL
 app.post('/makeme/makeme/makeme', function(req, res) {
     var youtubeUrl = req.body.youtubeUrl;
 
@@ -22,9 +22,12 @@ app.post('/makeme/makeme/makeme', function(req, res) {
     res.redirect('/clickme/clickme/clickme?yid=' + yid);
 });
 
+//display for a given youtube video id
 app.get('/clickme/clickme/clickme', function(req, res) {
+    var yid = req.query.yid;
+
     res.render('../views/clickme.ejs', {
-        yid: req.query.yid
+        yid: yid
     });
 });
 
