@@ -22,9 +22,10 @@ function getRelated(yid, callback) {
             return;
         }
 
-        body = JSON.parse(body);
-        var vids = body.items.map(ytConverter.fromRelatedSnippet);
-        callback(err, vids);
+        body = body && JSON.parse(body);
+        var vids = body && body.items
+                    && body.items.map(ytConverter.fromRelatedSnippet);
+        callback(err, vids || []);
     });
 }
 
