@@ -10,13 +10,13 @@ block body
 
         form(method=GLOBALS.ROUTES.CREATE.METHOD,
              action=GLOBALS.ROUTES.CREATE.URL)
-          div.form-group.col-xs-12.col-md-8.col-md-offset-2.text-center
+          div.form-group.col-xs-12.col-sm-8.col-sm-offset-2.text-center
             label(for="yurl") Paste a video here
             input#yurl.form-control(type="url",
                   name=GLOBALS.ROUTES.CREATE.PARAMS.Y_URL
                   placeholder="https://www.youtube.com/watch?v=wKbU8B-QVZk")
 
-          div.col-xs-12.col-md-4.col-md-offset-4.text-center
+          div.col-xs-12.col-sm-4.col-sm-offset-4.text-center
             label(for="submitButtons") And this video makes you feel...
             div#submitButtons.form-group.feelyText
               div.form-group
