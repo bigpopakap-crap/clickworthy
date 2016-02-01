@@ -1,6 +1,7 @@
 # clickworthy
 
 ## TODO
+* add a `?yUrl={URL}&mood=happy&autosubmit=true` query params to the hompeage
 * design the pages
 * create more copy
 * google analytics
