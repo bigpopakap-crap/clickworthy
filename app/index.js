@@ -13,6 +13,8 @@ var ytTrending = require('./youtube/yttrending.js');
 
 var GLOBALS = require('./globals.js');
 app.locals = {
+    //only expose config vars one by one, to avoid accidentally leaking them
+    MIXPANEL_PROJ_KEY: process.env.MIXPANEL_PROJ_KEY,
     GLOBALS: GLOBALS
 };
 
