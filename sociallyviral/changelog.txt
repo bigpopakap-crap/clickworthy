@@ -1,0 +1,42 @@
+Changelog
+
+1.0.8
+-----------------------------
+- Added plugin recommendations
+
+1.0.7
+-----------------------------
+- Fixed missing text domain issue
+
+1.0.6
+-----------------------------
+- Removed unnecessary code from customizer.php
+- Updated .pot file
+
+1.0.5
+-----------------------------
+- Speed Improvements http://take.ms/jPulH
+- Fixed styling issues on mobile screen
+- Fixed mobile navigation icon
+- Added Notification for Pro Version
+- Merged css/sociallyviral.css in style.css
+
+1.0.4
+-----------------------------
+- Third revision before release
+
+1.0.3
+-----------------------------
+- Third revision before release
+
+1.0.2
+-----------------------------
+- Second revision before release
+
+1.0.1
+-----------------------------
+- First revision before release
+
+1.0
+-----------------------------
+- Pre Release version.
