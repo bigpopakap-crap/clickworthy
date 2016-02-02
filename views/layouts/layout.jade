@@ -19,8 +19,13 @@ html(lang="en-US")
     block headResources
 
   body
-    nav#siteNav.navbar.navbar-inverse.navbar-fixed-top
-      span.noSelect Clickworthy
+    nav#siteNav.navbar.navbar-default.navbar-fixed-top
+      | Clickworthy
+    
+    div#siteSubNav
+      span Today's date
+      span &nbsp; • &nbsp;
+      span Bringing you the best videos ever
 
     block body 
     block bodyEndResources

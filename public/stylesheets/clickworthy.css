@@ -1,3 +1,37 @@
+#siteNav,
+#siteSubNav {
+    /* replace with bootstrap variables */
+    /* .noSelect */ user-select: no-select;
+    padding: 0 8px;
+    /* .feelyText */ text-transform: uppercase;
+}
+
+#siteNav {
+    /* replace with bootstrap variables */
+    height: 80px;
+    line-height: 80px;
+    background: #006b3a;
+    color: white;
+    font-size: 3.5rem;
+    /* .text-center */ text-align: center;
+    vertical-align: middle;
+    border-bottom: solid 1px #00522d;
+}
+
+#siteSubNav {
+    /* replace with bootstrap variables */
+    background: white;
+    height: 32px;
+    line-height: 32px;
+    color: #888888;
+    border-bottom: solid 1px #dddddd;
+}
+
+body {
+    /* replace with bootstrap variables */
+    padding-top: 80px;
+}
+
 .feelyText,
 .feelyText * {
     text-transform: uppercase;
