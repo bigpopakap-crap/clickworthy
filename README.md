@@ -1,7 +1,7 @@
 # clickworthy
 
 ## TODO
-* design the pages
+* design the pages, use LESS or SASS
 * create more copy
 * google analytics
 * deal with error conditions

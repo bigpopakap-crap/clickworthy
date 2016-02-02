@@ -13,11 +13,14 @@ html(lang="en-US")
     script(src="/public/boostrap/bootstrap-3.3.6/js/bootstrap.min.js", type="text/javascript")
 
     //- common CSS for the site
-    link(href="/public/stylesheets/clickworthy.css", rel="stylesheet", type="text/css")
-    
+    link(href="/public/stylesheets/clickworthy.css", rel="stylesheet", type="text/css")      
+
     //- where pages and stuff should add common JS and CSS
     block headResources
 
   body
+    nav#siteNav.navbar.navbar-inverse.navbar-fixed-top
+      span.noSelect Clickworthy
+
     block body 
     block bodyEndResources

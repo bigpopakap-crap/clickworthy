@@ -32,15 +32,16 @@ app.get(GLOBALS.ROUTES.INDEX, function(req, res) {
 });
 
 //create a page from youtube URL
-app.post(GLOBALS.ROUTES.CREATE.URL, function(req, res) {
+app.post(GLOBALS.ROUTES.CREATE.URL, function(req, res, next) {
     var youtubeUrl = req.body[GLOBALS.ROUTES.CREATE.PARAMS.Y_URL];
 
     var yid = youtubeUrl && ytparser.parse(youtubeUrl);
     if (!yid) {
         //TODO handle this error... not a valid youtube video
+        res.redirect('/error');
+    } else {
+        res.redirect(GLOBALS.ROUTES.VIDEO_PAGE.genUrl(yid));
     }
-
-    res.redirect(GLOBALS.ROUTES.VIDEO_PAGE.genUrl(yid));
 });
 
 //display for a given youtube video id
@@ -62,15 +63,16 @@ app.get(GLOBALS.ROUTES.VIDEO_PAGE.URL, function(req, res) {
     });
 });
 
+// error handler
+// TODO put this url in GLOBALS
+app.get('/error', function (req, res) {
+    //TODO make this better
+    res.send('Oh no something went wrong.');
+});
+
 // anything else redirects home
 app.get('*', function(req, res) {
     res.redirect(GLOBALS.ROUTES.INDEX);
-});
-
-// error handler
-app.use(function (err, req, res, next) {
-  console.error(err.stack);
-  res.status(400).send(err.message);
 });
 
 app.listen(port, function () {
