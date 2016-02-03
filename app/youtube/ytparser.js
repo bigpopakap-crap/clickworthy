@@ -1,4 +1,11 @@
 /*
+ *
+ *
+ * IMPORTANT! THIS FUNCTION
+ * IS DUPLICATED ON THE SERVER AND CLIENT...
+ * ALL CHANGES SHOULD BE MADE IN BOTH PLACES
+ *
+ *
  * Copied from
  * http://stackoverflow.com/questions/3452546/javascript-regex-how-to-get-youtube-video-id-from-url
  */

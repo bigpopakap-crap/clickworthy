@@ -1,6 +1,10 @@
 extends ./layouts/layout.jade
+include ./mixins/mixpanel
 include ./mixins/carousel
 include ./mixins/ytThumb
+
+block headResources
+  +mixpanelVideoView(yid)
 
 block body
   h1 #{pageTitle}

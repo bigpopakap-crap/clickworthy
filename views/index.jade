@@ -2,13 +2,16 @@ extends ./layouts/layout.jade
 include ./mixins/carousel
 include ./mixins/ytThumb
 
+block headResources
+  +mixpanelVideoCreate("#videoCreateForm", GLOBALS.ROUTES.CREATE.PARAMS.Y_URL)
+
 block body
   div.container-fluid
     div.row
       div.col-md12.text-center
         h1 You have the most important video to share with everyone
 
-        form(method=GLOBALS.ROUTES.CREATE.METHOD,
+        form#videoCreateForm(method=GLOBALS.ROUTES.CREATE.METHOD,
              action=GLOBALS.ROUTES.CREATE.URL)
           div.form-group.col-xs-12.col-sm-8.col-sm-offset-2.text-center
             label(for="yurl") Paste a video here
@@ -18,17 +21,18 @@ block body
 
           div.col-xs-12.col-sm-4.col-sm-offset-4.text-center
             label(for="submitButtons") And this video makes you feel...
+            -// TODO these button values should be sent with the form
             div#submitButtons.form-group.feelyText
               div.form-group
-                button.form-control.btn.btn-warning(type="submit", value="happy")
+                button.form-control.btn.btn-warning(type="submit", name="mood", value="happy")
                   | The happiest
                   span.glyphicon.glyphicon-share-alt
               div.form-group
-                button.form-control.btn.btn-primary(type="submit", value="sad")
+                button.form-control.btn.btn-primary(type="submit", name="mood", value="sad")
                   | The saddest
                   span.glyphicon.glyphicon-share-alt
               div.form-group
-                button.form-control.btn.btn-danger(type="submit", value="angry")
+                button.form-control.btn.btn-danger(type="submit", name="mood", value="angry")
                   | The angriest
                   span.glyphicon.glyphicon-share-alt
 
