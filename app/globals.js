@@ -1,6 +1,11 @@
 module.exports = {
     ROUTES : {
-        INDEX : '/',
+        INDEX : {
+            URL: '/',
+            PARAMS: {
+                Y_URL: 'yUrl'
+            }
+        },
         CREATE : {
             METHOD: 'POST',
             PARAMS: {

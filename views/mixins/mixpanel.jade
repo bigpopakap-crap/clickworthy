@@ -10,11 +10,9 @@ mixin mixpanelInit(projKey)
 mixin mixpanelVideoCreate(formSelector, urlParamName)
     script(type="text/javascript").
         window.K_HELPERS.MIXPANEL.mixpanelQueue(function () {
-            console.log('tracking video create');
             mixpanel.track_forms("#{formSelector}", "videoCreate", function(form) {
                 var data = $(form).serializeFormJSON();
-                data.parsed_video_id  = window.K_HELPERS.youtube_parser(data["#{urlParamName}"])
-                debugger;
+                data.parsed_video_id  = window.K_HELPERS.youtube_parser(data["#{urlParamName}"]);
                 return data;
             });
         });
@@ -22,7 +20,6 @@ mixin mixpanelVideoCreate(formSelector, urlParamName)
 mixin mixpanelVideoView(videoId)
     script(type="text/javascript").
         window.K_HELPERS.MIXPANEL.mixpanelQueue(function () {
-            console.log('tracking video view');
             mixpanel.track("videoView", {
                 videoId: "#{videoId}"
             });

@@ -5,6 +5,17 @@ include ./mixins/ytThumb
 block headResources
   +mixpanelVideoCreate("#videoCreateForm", GLOBALS.ROUTES.CREATE.PARAMS.Y_URL)
 
+  script(type="text/javascript").
+    $(document).ready(function() {
+      $("#videoCreateForm").submit(function() {
+        var data = $(this).serializeFormJSON();
+        var url = data["#{GLOBALS.ROUTES.CREATE.PARAMS.Y_URL}"];
+        window.history.replaceState({}, null,
+          "?#{GLOBALS.ROUTES.INDEX.PARAMS.Y_URL}=" + url
+        );
+      });
+    });
+
 block body
   div.container-fluid
     div.row
@@ -16,7 +27,8 @@ block body
           div.form-group.col-xs-12.col-sm-8.col-sm-offset-2.text-center
             label(for="yurl") Paste a video here
             input#yurl.form-control(type="url",
-                  name=GLOBALS.ROUTES.CREATE.PARAMS.Y_URL
+                  name=GLOBALS.ROUTES.CREATE.PARAMS.Y_URL,
+                  value=initValue,
                   placeholder="https://www.youtube.com/watch?v=wKbU8B-QVZk")
 
           div.col-xs-12.col-sm-4.col-sm-offset-4.text-center

@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var app = express();
-var port = process.env.PORT || 5364;
+var port = process.env.PORT;
 
 app.use('/public', express.static('public'));
 
@@ -22,12 +22,13 @@ app.locals = {
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // homepage
-app.get(GLOBALS.ROUTES.INDEX, function(req, res) {
+app.get(GLOBALS.ROUTES.INDEX.URL, function(req, res) {
     ytTrending.trending(function(err, trending) {
         //ignore the error if there is one
         trending = trending || [];
 
         res.render(GLOBALS.VIEWS.INDEX, {
+            initValue: req.query[GLOBALS.ROUTES.INDEX.PARAMS.Y_URL],
             trending: trending
         });
     });
@@ -69,12 +70,14 @@ app.get(GLOBALS.ROUTES.VIDEO_PAGE.URL, function(req, res) {
 // TODO put this url in GLOBALS
 app.get('/error', function (req, res) {
     //TODO make this better
+    //TODO log the error to mixpanel
+    //TODO have a link to go back
     res.send('Oh no something went wrong.');
 });
 
 // anything else redirects home
 app.get('*', function(req, res) {
-    res.redirect(GLOBALS.ROUTES.INDEX);
+    res.redirect(GLOBALS.ROUTES.INDEX.URL);
 });
 
 app.listen(port, function () {
