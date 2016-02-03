@@ -25,25 +25,6 @@
         };
     })(jQuery);
 
-    window.K_HELPERS.MIXPANEL = {
-
-        /*
-         * Polls mixpanel until it is loaded, and then executes the
-         * requested function
-         */
-        mixpanelQueue : function(doStuffFn) {
-            (function() {
-                var intervalId = setInterval(function() {
-                    if (mixpanel.__loaded) {
-                        clearInterval(intervalId);
-                        doStuffFn();
-                    }
-                }, 100);
-            })();
-        }
-
-    }
-
     /*
      *
      *

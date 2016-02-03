@@ -11,25 +11,18 @@ mixin mixpanelGeneralPageView(queryParams)
     script(type="text/javascript").
         var data = !{queryParams};
         data.URL_PATH = window.location.pathname;
-
-        window.K_HELPERS.MIXPANEL.mixpanelQueue(function () {
-            mixpanel.track("genPageView", data);
-        });
+        mixpanel.track("genPageView", data);
 
 mixin mixpanelVideoCreate(formSelector, urlParamName)
     script(type="text/javascript").
-        window.K_HELPERS.MIXPANEL.mixpanelQueue(function () {
-            mixpanel.track_forms("#{formSelector}", "videoCreate", function(form) {
-                var data = $(form).serializeFormJSON();
-                data.parsed_video_id  = window.K_HELPERS.youtube_parser(data["#{urlParamName}"]);
-                return data;
-            });
+        mixpanel.track_forms("#{formSelector}", "videoCreate", function(form) {
+            var data = $(form).serializeFormJSON();
+            data.parsed_video_id  = window.K_HELPERS.youtube_parser(data["#{urlParamName}"]);
+            return data;
         });
 
 mixin mixpanelVideoView(videoId)
     script(type="text/javascript").
-        window.K_HELPERS.MIXPANEL.mixpanelQueue(function () {
-            mixpanel.track("videoView", {
-                videoId: "#{videoId}"
-            });
+        mixpanel.track("videoView", {
+            videoId: "#{videoId}"
         });
