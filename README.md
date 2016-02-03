@@ -1,8 +1,6 @@
 # clickworthy
 
 ## TODO
-* add a `?yUrl={URL}&mood=happy&autosubmit=true` query params to the hompeage
-* mixpanel
 * design the pages, use LESS or SASS, OR a CSS template
 * create more copy
 * deal with error conditions

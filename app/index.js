@@ -35,8 +35,8 @@ app.get(GLOBALS.ROUTES.INDEX.URL, function(req, res) {
 });
 
 //create a page from youtube URL
-app.post(GLOBALS.ROUTES.CREATE.URL, function(req, res, next) {
-    var youtubeUrl = req.body[GLOBALS.ROUTES.CREATE.PARAMS.Y_URL];
+app.get(GLOBALS.ROUTES.CREATE.URL, function(req, res, next) {
+    var youtubeUrl = req.query[GLOBALS.ROUTES.CREATE.PARAMS.Y_URL];
 
     var yid = youtubeUrl && ytparser.parse(youtubeUrl);
     if (!yid) {

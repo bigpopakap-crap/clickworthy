@@ -7,7 +7,7 @@ module.exports = {
             }
         },
         CREATE : {
-            METHOD: 'POST',
+            METHOD: 'GET',
             PARAMS: {
                 Y_URL: 'yUrl'
             },
