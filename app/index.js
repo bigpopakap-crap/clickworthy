@@ -17,6 +17,14 @@ app.locals = {
     MIXPANEL_PROJ_KEY: process.env.MIXPANEL_PROJ_KEY,
     GLOBALS: GLOBALS
 };
+app.use(function(req, res, next) {
+    res.locals.REQ_GLOBALS = {
+        siteOrigin: req.headers.host,
+        queryParams: req.query
+    };
+
+    next();
+});
 
 // body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -57,7 +65,6 @@ app.get(GLOBALS.ROUTES.VIDEO_PAGE.URL, function(req, res) {
 
         res.render(GLOBALS.VIEWS.VIDEO_PAGE, {
             yid: yid,
-            siteOrigin: req.headers.host,
             pageTitle: textgen.pageTitle(),
             pageDesc: textgen.pageDesc(),
             relTitle: textgen.relTitle(),

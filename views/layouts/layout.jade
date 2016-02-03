@@ -21,7 +21,7 @@ html(lang="en-US")
     link(href="/public/stylesheets/clickworthy.css", rel="stylesheet", type="text/css")
 
     +mixpanelInit(MIXPANEL_PROJ_KEY)
-    +mixpanelGeneralPageView
+    +mixpanelGeneralPageView(JSON.stringify(REQ_GLOBALS.queryParams))
 
     //- where pages and stuff should add common JS and CSS
     block headResources

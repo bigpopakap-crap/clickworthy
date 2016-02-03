@@ -7,10 +7,13 @@ mixin mixpanelInit(projKey)
         mixpanel.init("#{projKey}"); // PROJECT KEY HERE
     <!-- end Mixpanel -->
 
-mixin mixpanelGeneralPageView
+mixin mixpanelGeneralPageView(queryParams)
     script(type="text/javascript").
+        var data = !{queryParams};
+        data.URL_PATH = window.location.pathname;
+
         window.K_HELPERS.MIXPANEL.mixpanelQueue(function () {
-            mixpanel.track("pageView", window.location);
+            mixpanel.track("genPageView", data);
         });
 
 mixin mixpanelVideoCreate(formSelector, urlParamName)

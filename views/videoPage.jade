@@ -9,7 +9,7 @@ block headResources
 block body
   h1 #{pageTitle}
   iframe(type="text/html",
-         src="https://www.youtube.com/embed/#{yid}?origin=#{siteOrigin}"
+         src="https://www.youtube.com/embed/#{yid}?origin=#{REQ_GLOBALS.siteOrigin}"
          frameborder="0")
   p #{pageDesc}
 
