@@ -34,9 +34,7 @@
         mixpanelQueue : function(doStuffFn) {
             (function() {
                 var intervalId = setInterval(function() {
-                    console.log('waiting: ' + intervalId);
                     if (mixpanel.__loaded) {
-                        console.log('yay! loaded!: ' + intervalId);
                         clearInterval(intervalId);
                         doStuffFn();
                     }
